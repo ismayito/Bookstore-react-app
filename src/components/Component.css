@@ -1,0 +1,73 @@
+.navContainer {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.removeBtn {
+  border: none;
+  background-color: inherit;
+  color: #4386bf;
+  font-size: 14px;
+  padding-left: 0;
+}
+
+.bookLink {
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 18px;
+  color: #000;
+}
+
+.categoryLink {
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 18px;
+  color: dimgray;
+}
+
+.title {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  color: #121212;
+  letter-spacing: -0.2px;
+  font-size: 24px;
+}
+
+.bookAuthor {
+  margin-top: 0;
+  color: #4386bf;
+  font-size: 14px;
+}
+
+.formContainer {
+  display: flex;
+  margin-top: 36px;
+  width: 100%;
+}
+
+.formContainer form {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+
+.bookTitle {
+  width: 60%;
+  padding: 12px;
+}
+
+.selectCategory {
+  width: 30%;
+  padding: 12px;
+}
+
+.submitButton {
+  width: 10%;
+  padding: 12px;
+}
