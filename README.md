@@ -1,5 +1,5 @@
-# math-magician 
-Just a simple webpack template for my projects
+# Bookstore-react app
+
 
 # 📗 Table of Contents
 

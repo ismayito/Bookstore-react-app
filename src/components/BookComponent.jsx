@@ -1,5 +1,7 @@
 import './Component.css';
 import { useState, useEffect } from 'react';
+import Book from './Book';
+import FormComponent from './FormComponent';
 
 const BookComponent = () => {
   const [book, setBook] = useState([]);
@@ -17,29 +19,10 @@ const BookComponent = () => {
     <>
       <div className="bookStore">
         {book ? bookData.map((book) => (
-          <div key={book.id}>
-            <p className="title">{book.title}</p>
-            <p className="bookAuthor">{book.author}</p>
-            <div className="buttons">
-              <button type="button" className="removeBtn">Remove</button>
-              <button type="button" className="removeBtn">Comments</button>
-              <button type="button" className="removeBtn">Edit</button>
-            </div>
-          </div>
+          <Book key={book.id} title={book.title} author={book.author} />
         )) : null}
       </div>
-      <div className="formContainer">
-        <form>
-          <input type="text" placeholder="Book title" className="bookTitle" />
-          <select name="books" id="books" className="selectCategory">
-            <option value="category">category</option>
-            <option value="fiction">fiction</option>
-            <option value="adventure">adventure</option>
-            <option value="entertainment">entertainment</option>
-          </select>
-          <button type="submit" className="submitButton">ADD BOOK</button>
-        </form>
-      </div>
+      <FormComponent />
     </>
   );
 };
