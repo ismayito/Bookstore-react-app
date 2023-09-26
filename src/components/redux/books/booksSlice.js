@@ -9,7 +9,7 @@ const booksSlice = createSlice({
   initialState,
   reducers: {
     addBooks: ((state) => {
-     state.books = state.books.push({ id: 1, title: 'Entertainment', author: 'Mayito Ismail' });
+      state.books = state.books.push({ id: 1, title: 'Entertainment', author: 'Mayito Ismail' });
     }),
     removeBooks: ((state, actions) => {
       const bookId = actions.payload;
