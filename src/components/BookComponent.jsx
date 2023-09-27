@@ -1,25 +1,22 @@
 import './Component.css';
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux/';
 import Book from './Book';
 import FormComponent from './FormComponent';
 
 const BookComponent = () => {
   const [book, setBook] = useState([]);
 
-  const bookData = [
-    { title: ' The Hunger games', author: 'Suzanne Collins', id: 1 },
-    { title: ' Dune', author: 'Frank Herbert', id: 2 },
-    { title: ' Capital in the Twenty-First Century', author: 'Suzanne Collins', id: 3 },
-  ];
+  const { books } = useSelector((store) => store.books);
 
   useEffect(() => {
-    setBook(bookData);
-  }, [book]);
+    setBook(books);
+  }, [books]);
   return (
     <>
       <div className="bookStore">
-        {book ? bookData.map((book) => (
-          <Book key={book.id} title={book.title} author={book.author} />
+        {book ? books?.map((book) => (
+          <Book key={book.item_id} itemId={book.item_id} title={book.title} author={book.author} />
         )) : null}
       </div>
       <FormComponent />
