@@ -1,27 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const initialState = {
-  books: [
-    {
-      item_id: 'item1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item2',
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item3',
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-    },
-  ],
+  books: {},
+  isLoading: false,
+  error: null,
 };
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/snHVDBK02Z7mOHfIcM9N/books';
+export const fetchBooks = createAsyncThunk('books/fetchBooks', () => {
+  const response = axios.get(url).then((response) => response.data);
+  return response;
+});
 
 const booksSlice = createSlice({
   name: 'books',
@@ -29,16 +18,31 @@ const booksSlice = createSlice({
   reducers: {
     addBooks: ((state, actions) => {
       const booksObject = actions.payload;
-      state.books.push(booksObject);
+      const id = booksObject.item_id;
+      state.books[id] = [booksObject];
     }),
     removeBooks: ((state, actions) => {
       const bookId = actions.payload;
-      state.books = state.books.filter((item) => item.item_id !== bookId);
+      const newBooks = { ...state.books };
+      delete (newBooks[bookId]);
+      state.books = newBooks;
     }),
-
+  },
+  extraReducers: {
+    [fetchBooks.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [fetchBooks.fulfilled]: (state, action) => {
+      state.books = action.payload;
+      state.isLoading = false;
+    },
+    [fetchBooks.rejected]: (state, action) => {
+      state.error = action.payload;
+      state.isLoading = false;
+    },
   },
 });
 
-export const { addBooks, removeBooks } = booksSlice.actions;
+export const { addBooks, removeBooks, extraReducers } = booksSlice.actions;
 
 export default booksSlice.reducer;

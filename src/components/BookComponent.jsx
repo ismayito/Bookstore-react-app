@@ -1,23 +1,38 @@
 import './Component.css';
-import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux/';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux/';
 import Book from './Book';
 import FormComponent from './FormComponent';
+import { fetchBooks } from './redux/books/booksSlice';
 
 const BookComponent = () => {
-  const [book, setBook] = useState([]);
-
-  const { books } = useSelector((store) => store.books);
-
+  const { books, isLoading, error } = useSelector((store) => store.books);
+  const dispatch = useDispatch();
   useEffect(() => {
-    setBook(books);
-  }, [books]);
+    dispatch(fetchBooks());
+  }, []);
+
+  const bookList = Object.keys(books);
+
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
+  if (error) {
+    return <h1>Error...</h1>;
+  }
+
   return (
     <>
       <div className="bookStore">
-        {book ? books?.map((book) => (
-          <Book key={book.item_id} itemId={book.item_id} title={book.title} author={book.author} />
-        )) : null}
+        {bookList.map((id) => (
+          <div key={id}>
+            {books[id].map((item) => (
+              <div key={item.title}>
+                <Book itemId={id} title={item.title} author={item.author} />
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
       <FormComponent />
     </>
