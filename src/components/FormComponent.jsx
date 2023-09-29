@@ -16,9 +16,11 @@ const FormComponent = () => {
   return (
     <>
       <div className="formContainer">
+        <span className="formDivider" />
+        <h2 className="formTitle">ADD NEW BOOK</h2>
         <form>
           <input type="text" placeholder="Book title" value={input} onChange={handleInput} className="bookTitle" />
-          <input type="text" placeholder="author" value={author} onChange={handleAuthor} className="bookTitle" />
+          <input type="text" placeholder="author" value={author} onChange={handleAuthor} className="formAuthor" />
           <select name="books" id="books" className="selectCategory">
             <option value="category">category</option>
             <option value="fiction">fiction</option>

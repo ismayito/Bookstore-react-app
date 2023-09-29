@@ -31,7 +31,7 @@ const AddBookComponent = ({
   };
   return (
     <div>
-      <button type="submit" onClick={handleSubmit}>ADD BOOK</button>
+      <button type="submit" onClick={handleSubmit} className="addBook">ADD BOOK</button>
     </div>
   );
 };

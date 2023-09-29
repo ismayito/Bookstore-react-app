@@ -2,6 +2,137 @@
   display: flex;
   align-items: center;
   gap: 36px;
+  margin-top: 120px;
+  background-color: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  border-radius: 2px;
+}
+
+.linksContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  align-items: center;
+}
+
+.profile {
+  background-color: #fff;
+  color: #0290ff;
+}
+
+.nav {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  padding: 12px 0;
+}
+
+.oval {
+  width: 4.25rem;
+  height: 4.25rem;
+  border-style: solid;
+  border-width: 5px;
+  border: solid 5px #307bbe;
+  border-left-color: #e8e8e8;
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+
+.percentage {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 2rem;
+  margin-bottom: 2px;
+  margin-top: 0;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.completed {
+  opacity: 0.5;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+  margin-top: 0;
+}
+
+.ovalContainer {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border-right: 2px solid #e8e8e8;
+  padding-right: 180px;
+}
+
+.percentageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  height: 2.313rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0290ff;
+}
+
+.chapterContainer {
+  margin-left: 0;
+}
+
+.chapterTitle {
+  opacity: 0.5;
+  font-family: 'RobotoSlab', Arial, sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.chapter {
+  font-family: 'RobotoSlab', Arial, sans-serif;
+  font-size: 1rem;
+  margin-top: 2px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: #121212;
+}
+
+.progress {
+  border-radius: 3px;
+  background-color: #0290ff;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  font-family: 'RobotoSlab', Arial, sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
 }
 
 .buttons {
@@ -20,54 +151,156 @@
 .bookLink {
   text-decoration: none;
   letter-spacing: 2px;
-  font-size: 18px;
-  color: #000;
+  color: #121212;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
 }
 
 .categoryLink {
   text-decoration: none;
   letter-spacing: 2px;
-  font-size: 18px;
-  color: dimgray;
+  opacity: 0.5;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  color: #121212;
+}
+
+.bookStore {
+  width: 85%;
+  margin: 0 auto;
+  background-color: #fff;
+  margin-top: 48px;
+  padding: 36px 40px;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  display: flex;
+  gap: 200px;
+
+  /* justify-content: space-between; */
+}
+
+.category {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  opacity: 0.5;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
 }
 
 .title {
   margin-bottom: 0;
+  margin-top: 0;
   padding-bottom: 0;
-  color: #121212;
+  font-family: 'RobotoSlab', Arial, sans-serif;
+  font-size: 1.375rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
   letter-spacing: -0.2px;
-  font-size: 24px;
+  color: #121212;
 }
 
 .bookAuthor {
   margin-top: 0;
+  font-family: 'RobotoSlab', Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
   color: #4386bf;
-  font-size: 14px;
 }
 
 .formContainer {
-  display: flex;
+  padding-top: 18px;
   margin-top: 36px;
   width: 100%;
 }
 
+.formDivider {
+  border-top: 1px solid #e8e8e8;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
 .formContainer form {
   display: flex;
-  gap: 24px;
-  width: 100%;
+  margin: 0 auto;
+  gap: 36px;
+  width: 90%;
+}
+
+.formTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  color: #888;
+  margin-top: 24px;
+  margin-left: 80px;
 }
 
 .bookTitle {
-  width: 60%;
-  padding: 12px;
+  width: 32.5rem;
+  padding: 6px;
+}
+
+.formAuthor {
+  width: 12rem;
+  padding: 6px;
+}
+
+.addBook {
+  font-family: 'RobotoSlab', Arial, sans-serif;
+  font-size: 0.813rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
+  border-radius: 3px;
+  background-color: #0290ff;
+  padding: 0.801rem 1.188rem;
 }
 
 .selectCategory {
-  width: 30%;
+  width: 20%;
   padding: 12px;
 }
 
 .submitButton {
   width: 10%;
   padding: 12px;
+}
+
+.divider {
+  border-left: 1px solid #e8e8e8;
+  width: 2px;
+  height: 22px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
